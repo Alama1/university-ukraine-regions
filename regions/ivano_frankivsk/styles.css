@@ -1,0 +1,21 @@
+.Article-description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Article-description img {
+    height: 140px;
+}
+
+.Images-block {
+    display: flex;
+}
+.Images-block > div {
+    margin-right: 10px;
+}
+.Images-block p {
+    margin-top: 0px;
+}
+.Images-block > div:last-child img {
+    height: 190px;
+}

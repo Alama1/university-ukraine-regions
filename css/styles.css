@@ -1,0 +1,62 @@
+html *
+{
+    font-family: Roboto !important;
+}
+
+body {
+    margin: 0;
+}
+
+.App-logo {
+    height: 100%;
+    margin-right: 20px;
+}
+
+.App-title {
+    font-size: 24px;
+    color: #cac9c9;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.App-header {
+    background-color: #282c34;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 5px 120px;
+
+}
+
+.App-body {
+    margin: 0 60px;
+    padding: 20px 60px 60px 60px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px #dadada;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+h2 {
+    font-size: 20px;
+    text-align: left;
+    margin-top: 36px;
+}
+
+p, strong {
+    font-size: 16px;
+    text-align: left;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+#region-info {
+    padding-top: 20px;
+}
