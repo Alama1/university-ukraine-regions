@@ -14,6 +14,7 @@ https://github.com/benya/jqvmap-ukraine
 
 <head>
 
+
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <script src="./js/index.js"></script>
@@ -30,6 +31,7 @@ https://github.com/benya/jqvmap-ukraine
     <script>
         jQuery(document).ready(function() {
 
+
             function showRegionInfo(region_name) {
                 fetch('regions/' + region_name + '/' + region_name + '.html')
                     .then(data => data.text())
@@ -39,7 +41,6 @@ https://github.com/benya/jqvmap-ukraine
             jQuery('#ua').vectorMap(
 
                 {
-
                     map: 'ukraine',
                     backgroundColor: 'white',
                     borderColor: '#FF9900',
@@ -48,25 +49,27 @@ https://github.com/benya/jqvmap-ukraine
                     color: '#1076C8',
                     hoverColor: '#0A4C82',
                     selectedColor: '#FF9900',
+
                     onRegionClick: function(element, code, region)
                     {
+                        document.getElementById("map").style.display = "block"
                         var message = 'You clicked "'
                             + region
                             + '" which has the code: '
                             + code.toUpperCase();
-
 
                         console.log(message);
                         console.log(code);
 
                         switch (code) {
                             case '2': { showRegionInfo("volyn"); break; }
-                            case '17': { showRegionInfo("sumskaya"), initMap(50.95165091686104, 34.755336237263975); break; }
+                            case '17': { showRegionInfo("sumskaya"), initMap(50.95165091686104, 34.755336237263975), initPoint(50.925105095883026, 34.77713325161646); break; }
 
                             case '8': { showRegionInfo("ivano_frankivsk"), initMap(48.91333129107831, 24.695154019627584); break; }
                             case '9': { showRegionInfo("kyiv"); break; }
                             default: showRegionInfo("not_found")
                         }
+
                     }
                 }
 
@@ -79,23 +82,27 @@ https://github.com/benya/jqvmap-ukraine
 </head>
 
 <body>
-<div id="map"></div>
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvtmxNxWwXw6OvT1kp9yNrGikNPeKCUSk&callback=initMap&libraries=&v=weekly"
-        async
-></script>
     <div class="App">
         <header class="App-header">
             <img src="./logo.png" class="App-logo" alt="logo" />
             <p class="App-title">Області України</p>
         </header>
+
         <div class="App-body">
+            <div id="map">
+                <script>
+                    document.getElementById("map").style.display = "none"
+                </script>
+            <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvtmxNxWwXw6OvT1kp9yNrGikNPeKCUSk&callback=initMap&libraries=&v=weekly"
+                    async
+            ></script> </div>
             <h2>Оберіть область для перегляду:</h2>
             <div id="ua"></div>
             <div id="region-info"></div>
-
         </div>
     </div>
+
 </body>
 
 </html>
